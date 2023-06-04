@@ -23,7 +23,7 @@ class Variable {
     // var 타입과 비슷
     // 모든 타입을 입력할 수 있다.
     // 실제 개발할 떄 이게 무슨 값인지 알기 어려움
-    dynamic d = "우문식"
+    dynamic d = "우문식";
     d = 12;
     d = 22.3;
     d = false;

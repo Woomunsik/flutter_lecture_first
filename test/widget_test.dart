@@ -6,6 +6,7 @@
 // tree, read text, and verify that the values of widget properties are correct.
 
 import 'package:flutter/material.dart';
+import 'package:flutter_lecture_first/CH1/operator.dart';
 import 'package:flutter_lecture_first/CH1/variable.dart';
 import 'package:flutter_test/flutter_test.dart';
 
@@ -13,4 +14,7 @@ import 'package:flutter_lecture_first/main.dart';
 
 void main() {
   Variable();
+
+  Operator();
+
 }
