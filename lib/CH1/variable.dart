@@ -2,6 +2,7 @@ class Variable {
 
   ///변수 : String, int, double, bool, var, dynamic
   ///변수 = 값을 변경할 수 있는 수
+  ///상수 = 값을 변결할 수 없는 수
   Variable(){
 
     String name = "우문식";
