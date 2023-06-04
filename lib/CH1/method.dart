@@ -6,7 +6,7 @@ class Method {
     double result = calculate(10, 20); //22.5
     print('Method.Method result : $result');
 
-    String kk = introduce(name: "우문식", name2: "woomunsik")
+    String kk = introduce(name: "우문식", name2: "woomunsik");
     print('Method.Method kk : $kk ');
 
     var o = optional("우문식");
@@ -37,7 +37,7 @@ class Method {
     return "안녕하세요. $name입니다.";
   }
 
-  String optional(Strinf a,{String b = "빈 값"}) {
+  String optional(String a,{String b = "빈 값"}) {
     return "$a, $b, 잘 부탁드립니다.";
   }
 }
