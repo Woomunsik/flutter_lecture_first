@@ -8,8 +8,8 @@ class Conditional{
 
     int result = conditionalIf(50);
     print('result : $result');
-    String result = testGrade(85);
-    print('등급 : $result');
+    String score = testGrade(85);
+    print('등급 : $score');
 
   }
 
