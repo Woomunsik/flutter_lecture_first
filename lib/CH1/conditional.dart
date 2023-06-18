@@ -11,6 +11,8 @@ class Conditional{
     String score = testGrade(85);
     print('등급 : $score');
 
+    String switchResult = testSwitch(70);
+    print('switchResult');
   }
 
   int conditionalIf(int value){
@@ -36,4 +38,31 @@ class Conditional{
    return grade;
 
   }
-}
+
+  /// If 문은 범위 체크 가능
+  /// Switch 문은 동일한 값을 체크
+  /// score 라는 변수의 값을 체크하려는 목적
+  String testSwitch(int score) {
+    String grade = "F";
+    
+    switch(score) {
+      case 90:
+        // score의 값이 90인 경우
+      grade = "A";
+        break;
+      case 80:
+        // score의 값이 80인 경우
+      grade = "B";
+        break;
+      case 70:
+        grade = "C";
+        // score의 값이 70인 경우
+        break;
+      default:
+        grade = "No data";
+        break;
+
+    }
+  return grade;
+  }
+} 
