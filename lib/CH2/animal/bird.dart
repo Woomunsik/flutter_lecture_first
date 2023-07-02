@@ -1,9 +1,10 @@
 import 'package:flutter_lecture_first/CH2/animal/animal.dart';
 import 'package:flutter_lecture_first/CH2/animal/dog_interface.dart';
+import 'package:flutter_lecture_first/CH2/animal/item.dart';
 
 import 'animal_interface.dart';
 
-class Bird extends Animal implements AnimalInterface, DogInterface{
+class Bird extends Animal with Item, Item2 implements AnimalInterface, DogInterface {
   
   /// 생성자
   /// 생성자는 해당 클래스를 생성할 때 사용하는 함수
@@ -56,6 +57,22 @@ class Bird extends Animal implements AnimalInterface, DogInterface{
   @override
   void play() {
     // TODO: implement play
+  }
+
+  @override
+  void wakeUp() {
+    // TODO: implement wakeUp
+  }
+
+  @override
+  void talk() {
+    // TODO: implement talk
+    super.talk();
+  }
+
+  @override
+  void nothing() {
+    // TODO: implement nothing
   }
 
 }
