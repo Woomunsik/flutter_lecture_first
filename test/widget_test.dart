@@ -8,6 +8,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_lecture_first/CH1/conditional.dart';
 import 'package:flutter_lecture_first/CH1/method.dart';
+import 'package:flutter_lecture_first/CH1/null_safety.dart';
 import 'package:flutter_lecture_first/CH1/operator.dart';
 import 'package:flutter_lecture_first/CH1/variable.dart';
 import 'package:flutter_lecture_first/CH2/animal/bird.dart';
@@ -85,7 +86,19 @@ void main() {
   // dog1.eat();
   // dog1.sleep();
 
-  HomeWorkCar();
+  // HomeWorkCar();
 
+  var nulllSafety = NulllSafety();
 
+  nulllSafety.age = 40;
+  nulllSafety.name = "홍길동";
+
+  nulllSafety.age2 = null;
+  nulllSafety.name2 = null;
+
+  /// nullableTyoe으로 선언을 하면 null로 인식
+  ///  non-nullableType인데 초기화를 안하면 오류 발생
+  NulllSafety? ns2 = null;
+
+  print('ns2 : $ns2');
 }
