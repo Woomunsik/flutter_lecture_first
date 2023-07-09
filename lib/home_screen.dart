@@ -7,11 +7,16 @@ import 'package:flutter_lecture_first/ch3/scaffold_screen.dart';
 import 'package:flutter_lecture_first/ch3/text_screen.dart';
 import 'package:flutter_lecture_first/ch4/listview_screen.dart';
 import 'package:flutter_lecture_first/ch4/single_scroll_screen.dart';
+import 'package:flutter_lecture_first/ch5/bottom_navigation_bar_screen.dart';
 
 import 'ch4/button_screen.dart';
 import 'ch4/gridview_screen.dart';
 import 'ch4/text_form_field_screen.dart';
+import 'ch5/default_tab_controller_screen.dart';
 import 'ch5/pageview_screen.dart';
+import 'ch5/tabbar_screen.dart';
+import 'ch5/ui_exam.dart';
+import 'ch5/ui_exam_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -41,6 +46,11 @@ class _HomeScreenState extends State<HomeScreen> {
           button(page: ListviewScreen(), name: "ListviewScreen"),
           button(page: GridViewScreen(), name: "GridViewScreen"),
           button(page: PageViewScreen(), name: "PageViewScreen"),
+          button(page: TabBarScreen(), name: "TabBarScreen"),
+          button(page: DefaultTabControllerScreen(), name: "DefaultTabControllerScreen"),
+          button(page: UiExam(), name: "UiExam"),
+          button(page: UiExamScreen(), name: "UiExamScreen"),
+          button(page: BottomNavigationBarScreen(), name: "BottomNavigationBarScreen"),
         ],
       ),
     ),);
