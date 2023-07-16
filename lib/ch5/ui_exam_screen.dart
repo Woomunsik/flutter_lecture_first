@@ -9,21 +9,33 @@ class UiExamScreen extends StatefulWidget {
 }
 
 class _UiExamScreenState extends State<UiExamScreen> {
-  final PageController pageController = PageController(
-    viewportFraction: 0.9
-  );
+  int _currentIndex = 0;
+
+  final PageController pageController = PageController(viewportFraction: 0.9);
 
   @override
   void dispose() {
     pageController.dispose();
     super.dispose();
   }
+
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
-      appBar: _appBar(),
-      body: _body(),
-    );
+        backgroundColor: Colors.white,
+        appBar: _appBar(),
+        body: IndexedStack(
+          index: _currentIndex,
+          children: [
+            _body(),
+            Container(
+              color: Colors.pink,
+            ),
+            Container(
+              color: Colors.grey,
+            ),
+          ],
+        ),
+        bottomNavigationBar: _bottomNav(),);
   }
 
   AppBar _appBar() {
@@ -33,11 +45,7 @@ class _UiExamScreenState extends State<UiExamScreen> {
       backgroundColor: Colors.white,
       foregroundColor: Colors.black,
       elevation: 0,
-      actions: [
-        IconButton(onPressed: () {
-          
-        }, icon: const Icon(Icons.add))
-      ],
+      actions: [IconButton(onPressed: () {}, icon: const Icon(Icons.add))],
     );
   }
 
@@ -50,7 +58,9 @@ class _UiExamScreenState extends State<UiExamScreen> {
             height: 20,
           ),
           _middle(),
-          const SizedBox(height: 20,),
+          const SizedBox(
+            height: 20,
+          ),
           ..._bottom(),
         ],
       ),
@@ -77,7 +87,7 @@ class _UiExamScreenState extends State<UiExamScreen> {
       children: [
         ...List.generate(
           labels.length,
-          (index) {
+              (index) {
             return iconItem(
               text: labels[index],
               onPressed: () {
@@ -135,9 +145,11 @@ class _UiExamScreenState extends State<UiExamScreen> {
               borderRadius: BorderRadius.circular(14),
               image: DecorationImage(
                 fit: BoxFit.cover,
-                image: Image.asset(
+                image: Image
+                    .asset(
                   imageList[index],
-                ).image,
+                )
+                    .image,
               ),
             ),
           );
@@ -146,23 +158,50 @@ class _UiExamScreenState extends State<UiExamScreen> {
     );
   }
 
- List<Widget> _bottom() {
-    return List.generate(10, (index){
-      return ListTile(
-        onTap: () {
-
-        },
-        leading: const Icon(Icons.notifications_none_rounded),
-        title: const Padding(
-          padding: const EdgeInsets.only(bottom: 4),
-          child: Text("[이벤트] 이것은 공지사항 입니다."),
-        ),
-        minLeadingWidth: 0,
-        contentPadding: EdgeInsets.zero,
-      );
-    },
+  List<Widget> _bottom() {
+    return List.generate(
+      10,
+          (index) {
+        return ListTile(
+          onTap: () {},
+          leading: const Icon(Icons.notifications_none_rounded),
+          title: const Padding(
+            padding: const EdgeInsets.only(bottom: 4),
+            child: Text("[이벤트] 이것은 공지사항 입니다."),
+          ),
+          minLeadingWidth: 0,
+          contentPadding: EdgeInsets.zero,
+        );
+      },
     );
- }
+  }
 
-
+  Widget _bottomNav() {
+    return BottomNavigationBar(
+      backgroundColor: Colors.white,
+      iconSize: 30,
+      currentIndex: _currentIndex,
+      onTap: (value) {
+        setState(() {
+          _currentIndex = value;
+        });
+      },
+      items: const
+      [BottomNavigationBarItem(
+          icon: Icon(Icons.home_outlined),
+          activeIcon: Icon(Icons.home),
+          label: "홈",
+        ),
+        BottomNavigationBarItem(
+          icon: Icon(Icons.assignment_outlined),
+          activeIcon: Icon(Icons.assignment_turned_in),
+          label: "이용서비스",
+        ),
+        BottomNavigationBarItem(
+          icon: Icon(Icons.account_balance),
+          activeIcon: Icon(Icons.account_circle),
+          label: "내정보",
+        ),
+      ],);
+  }
 }

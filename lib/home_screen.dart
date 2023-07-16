@@ -17,6 +17,10 @@ import 'ch5/pageview_screen.dart';
 import 'ch5/tabbar_screen.dart';
 import 'ch5/ui_exam.dart';
 import 'ch5/ui_exam_screen.dart';
+import 'ch6/dialog_screen.dart';
+import 'ch6/route_screen.dart';
+import 'ch6/todo/todo_list_screen.dart';
+import 'ch6/todo_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -51,6 +55,13 @@ class _HomeScreenState extends State<HomeScreen> {
           button(page: UiExam(), name: "UiExam"),
           button(page: UiExamScreen(), name: "UiExamScreen"),
           button(page: BottomNavigationBarScreen(), name: "BottomNavigationBarScreen"),
+          button(page: RouteScreen(), name: "RouteScreen"),
+          ElevatedButton(onPressed: () {
+            Navigator.pushNamed(context, "/first");
+          }, child: Text("RouteNamedScreen"),),
+          button(page: DialogScreen(), name: "DialogScreen"),
+          button(page: TodoScreen(), name: "TodoScreen"),
+          button(page: TodoListScreen(), name: "TodoListScreen"),
         ],
       ),
     ),);
